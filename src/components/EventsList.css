@@ -1,0 +1,38 @@
+.events-section {
+  min-height: 100vh;
+  padding: 80px 0;
+  background: #0a0b1e;
+}
+
+.events-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.events-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.loading {
+  text-align: center;
+  font-size: 18px;
+  color: #9ca3af;
+  padding: 60px 0;
+}
+
+@media (max-width: 768px) {
+  .events-section {
+    padding: 60px 0;
+  }
+
+  .events-container {
+    padding: 0 24px;
+  }
+
+  .events-grid {
+    gap: 24px;
+  }
+}

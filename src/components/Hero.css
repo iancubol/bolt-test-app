@@ -1,0 +1,134 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(180deg, #0a0b1e 0%, #1a1b3e 100%);
+}
+
+.soundwaves-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.soundwave {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  opacity: 0.15;
+}
+
+.soundwave-left {
+  left: -100px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-15deg);
+}
+
+.soundwave-right {
+  right: -100px;
+  top: 50%;
+  transform: translateY(-50%) rotate(15deg) scaleX(-1);
+}
+
+.wave {
+  fill: none;
+  stroke: #9333ea;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.wave-1 {
+  animation: wave-animate 3s ease-in-out infinite;
+}
+
+.wave-2 {
+  animation: wave-animate 3s ease-in-out 0.5s infinite;
+}
+
+.wave-3 {
+  animation: wave-animate 3s ease-in-out 1s infinite;
+}
+
+.wave-4 {
+  animation: wave-animate 3s ease-in-out 1.5s infinite;
+}
+
+@keyframes wave-animate {
+  0%, 100% {
+    d: path("M 0 250 Q 125 150 250 250 T 500 250");
+    opacity: 0.3;
+  }
+  50% {
+    d: path("M 0 250 Q 125 100 250 250 T 500 250");
+    opacity: 0.6;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.hero-title {
+  font-size: clamp(48px, 10vw, 120px);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 48px;
+  background: linear-gradient(180deg, #ffffff 0%, #e0e0e0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -2px;
+}
+
+.hero-button {
+  padding: 18px 48px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #9333ea 0%, #7c3aed 100%);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(147, 51, 234, 0.4);
+}
+
+.hero-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(147, 51, 234, 0.6);
+  background: linear-gradient(135deg, #a855f7 0%, #8b5cf6 100%);
+}
+
+.hero-button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .soundwave {
+    width: 400px;
+    height: 400px;
+  }
+
+  .soundwave-left {
+    left: -150px;
+  }
+
+  .soundwave-right {
+    right: -150px;
+  }
+
+  .hero-title {
+    margin-bottom: 32px;
+  }
+
+  .hero-button {
+    padding: 16px 40px;
+    font-size: 16px;
+  }
+}
